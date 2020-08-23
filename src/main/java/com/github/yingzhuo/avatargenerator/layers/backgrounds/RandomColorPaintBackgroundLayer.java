@@ -9,9 +9,9 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 package com.github.yingzhuo.avatargenerator.layers.backgrounds;
 
+import com.github.yingzhuo.avatargenerator.AvatarInfo;
 import com.github.yingzhuo.avatargenerator.layers.Layer;
 import com.github.yingzhuo.avatargenerator.utils.AvatarUtils;
-import com.github.yingzhuo.avatargenerator.AvatarInfo;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

@@ -18,10 +18,8 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public final class Avatar implements Serializable {
 
@@ -59,19 +57,22 @@ public final class Avatar implements Serializable {
 
     public BufferedImage create(long code) {
         Random random = new Random(code);
-
         AvatarInfo avatarInfo = new AvatarInfoImpl(code, random);
         return buildAll(avatarInfo);
     }
 
     public byte[] createAsPngBytes(long code) {
         BufferedImage src = create(code);
-        try (ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
-            ImageIO.write(src, "png", baos);
-            return baos.toByteArray();
+        try (ByteArrayOutputStream os = new ByteArrayOutputStream()) {
+            ImageIO.write(src, "png", os);
+            return os.toByteArray();
         } catch (IOException e) {
             throw new UncheckedIOException("Failed to write png for code=" + code, e);
         }
+    }
+
+    public String createAsPngBase64EncodedString(long code) {
+        return Base64.getEncoder().encodeToString(createAsPngBytes(code));
     }
 
     public void createAsPngToFile(long code, File file) {
