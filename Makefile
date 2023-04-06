@@ -4,7 +4,7 @@ no_default:
 	@echo "no default target"
 
 deploy:
-	@mvn -f $(CURDIR)/pom.xml clean deploy -P Sonar
+	@mvn -f $(CURDIR)/pom.xml clean deploy -P sonar
 
 install:
 	@mvn -f $(CURDIR)/pom.xml clean install

@@ -6,12 +6,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.yingzhuo</groupId>
     <artifactId>avatar-generator</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <name>carnival</name>
     <url>https://github.com/yingzhuo/avatar-generator</url>
 
-    <description>spring-boot starters</description>
+    <description>生成默认头像的小工具</description>
 
     <parent>
         <groupId>org.sonatype.oss</groupId>
@@ -22,7 +22,7 @@
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -72,7 +72,7 @@
 
     <profiles>
         <profile>
-            <id>Sonar</id>
+            <id>sonar</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
@@ -81,7 +81,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
+                        <version>3.0.1</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -89,6 +89,12 @@
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
