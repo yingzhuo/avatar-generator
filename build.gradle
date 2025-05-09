@@ -1,0 +1,18 @@
+plugins {
+	id 'buildlogic.java-conventions'
+	id 'buildlogic.check-conventions'
+	id 'buildlogic.maven-central-jar-conventions'
+	id 'buildlogic.sonatype-conventions'
+	id 'buildlogic.root-project-conventions'
+}
+
+defaultTasks 'classes'
+
+group = 'com.github.yingzhuo'
+version = thisProjectVersion
+
+allprojects {
+	configurations.configureEach {
+		resolutionStrategy.cacheChangingModulesFor 0, 'minutes'
+	}
+}

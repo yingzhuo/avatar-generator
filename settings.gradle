@@ -1,0 +1,13 @@
+pluginManagement {
+	repositories {
+		mavenLocal()
+		gradlePluginPortal()
+		mavenCentral()
+	}
+}
+
+dependencyResolutionManagement {
+	evaluate(file('buildSrc/config/maven/RepositoriesSupport.groovy')).apply(this)
+}
+
+rootProject.name = 'avatar-generator'

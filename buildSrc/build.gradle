@@ -1,0 +1,24 @@
+plugins {
+	id 'groovy-gradle-plugin'
+}
+
+['../gradle.properties', 'gradle.properties'].each {
+	try (var reader = file(it).newReader('ISO-8859-1')) {
+		final var props = new Properties()
+		props.load(reader)
+		props.forEach(ext::set)
+	}
+}
+
+dependencies {
+	implementation "io.gitee.pkmer.pkmerboot-central-publisher:io.gitee.pkmer.pkmerboot-central-publisher.gradle.plugin:$mavenCentralPublisherPluginVersion"
+}
+
+gradlePlugin {
+	plugins {
+		create('LicenseAddingPlugin') {
+			id = 'buildlogic.binary-plugin.license'
+			implementationClass = 'buildlogic.gradle.plugin.LicensePlugin'
+		}
+	}
+}
