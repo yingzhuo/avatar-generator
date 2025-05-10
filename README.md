@@ -4,7 +4,13 @@
 
 # avatar-generator
 
-### 依赖
+### 依赖 (gradle)
+
+```gradle
+implementation 'com.github.yingzhuo:avatar-generator:1.1.0'
+```
+
+### 依赖 (maven)
 
 ```xml
 <dependency>
