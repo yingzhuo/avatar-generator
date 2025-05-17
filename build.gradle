@@ -11,8 +11,9 @@ defaultTasks 'classes'
 group = 'com.github.yingzhuo'
 version = thisProjectVersion
 
-allprojects {
-	configurations.configureEach {
-		resolutionStrategy.cacheChangingModulesFor 0, 'minutes'
+configurations.configureEach {
+	resolutionStrategy {
+		cacheChangingModulesFor(0, 'minutes')
+		cacheDynamicVersionsFor(0, 'minutes')
 	}
 }
