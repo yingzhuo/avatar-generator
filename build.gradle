@@ -8,6 +8,9 @@ plugins {
 
 defaultTasks 'classes'
 
+ext {
+}
+
 group = 'com.github.yingzhuo'
 version = thisProjectVersion
 
@@ -16,4 +19,7 @@ configurations.configureEach {
 		cacheChangingModulesFor(0, 'minutes')
 		cacheDynamicVersionsFor(0, 'minutes')
 	}
+}
+
+dependencies {
 }
