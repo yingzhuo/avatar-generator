@@ -7,7 +7,7 @@
 ### 依赖 (gradle)
 
 ```gradle
-implementation 'com.github.yingzhuo:avatar-generator:1.1.0'
+implementation 'com.github.yingzhuo:avatar-generator:1.1.1'
 ```
 
 ### 依赖 (maven)
